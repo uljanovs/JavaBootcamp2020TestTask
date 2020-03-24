@@ -1,70 +1,72 @@
 package sef.ATestTask.FirstActivity;
 
-public class Employee extends Person {
+public class Employee extends Person implements Comparable<Employee>{
 
-    int empId;
-    String jobTitle;
-    String companyName;
-    double salary;
+    private int empId;
+    private String jobTitle;
+    private String companyName;
+    private double salary;
 
     //TODO 1 create different constructors
-    public Employee() {
+    public Employee(){
         this.empId = 0;
         this.jobTitle = "Unknown";
         this.companyName = "Unknown";
-        this.salary = 0;
+        this.salary = 0.0;
     }
 
-    public Employee(int empId, String jobTitle, String companyName, double salary) {
+    public Employee(int empId,  String jobTitle, String companyName, double salary) {
         this.empId = empId;
         this.jobTitle = jobTitle;
         this.companyName = companyName;
         this.salary = salary;
-    }
 
-    public Employee(int empId, String jobTitle) {
-        this.empId = empId;
-        this.jobTitle = jobTitle;
-    }
 
-    public Employee(String companyName, double salary) {
-        this.companyName = companyName;
-        this.salary = salary;
     }
 
     //TODO 2 add getters and setters
+
     public int getEmpId() {
         return empId;
-}
-    public void setEmpId(int empId){
+    }
+
+    public void setEmpId(int empId) {
         this.empId = empId;
     }
-    public String getJobTittle() {
+
+    public String getJobTitle() {
         return jobTitle;
     }
-    public void setJobTitle(String jobTitle){
+
+    public void setJobTitle(String jobTitle) {
         this.jobTitle = jobTitle;
     }
+
     public String getCompanyName() {
         return companyName;
     }
-    public void setCompanyName(String companyName){
+
+    public void setCompanyName(String companyName) {
         this.companyName = companyName;
     }
-    public double getSalary(){
+
+    public double getSalary() {
         return salary;
     }
-    public void setSalary(double salary){
+
+    public void setSalary(double salary) {
         this.salary = salary;
     }
-    // setter for int age
+
 
     //TODO 3 override method announce()
-
     public String announce() {
-        return "My name is " + getFirstName() + " " + getSecondName() + "and I am " + getAge() + ". I am work sa " + getJobTittle() + "in " + getCompanyName();
+     return "My name is  " + getFirstName() + getSecondName() + " and I am " + getAge() + "years old. " + " I am work as " + getJobTitle() + getCompanyName() + "Salary: " + getSalary();
     }
-    //"My name is <name> and i am <age> years old
-    //   I am work as <jobTitle> in <company>"
-}
 
+
+    @Override
+    public int compareTo(Employee o) {
+        return (Double.compare(this.getSalary(), o.getSalary()));
+    }
+    }

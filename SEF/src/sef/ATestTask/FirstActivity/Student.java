@@ -4,13 +4,15 @@ package sef.ATestTask.FirstActivity;
 //TODO Implement class Student with parent Person
 
 public class Student extends Person {
-    String schoolName;
+    private String schoolName;
 
     public Student() {
+        this.schoolName = "Unknown";
     }
 
     public Student(String schoolName) {
         this.schoolName = schoolName;
+
     }
 
     public String getSchoolName() {
@@ -21,7 +23,8 @@ public class Student extends Person {
         this.schoolName = schoolName;
     }
 
-    public String announce() {
-        return super.announce() + ". I am study in university " + getSchoolName();
+    public String announce(String st) {return "I am study in university  " + getSchoolName();
     }
+
 }
+

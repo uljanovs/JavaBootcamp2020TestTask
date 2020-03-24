@@ -1,28 +1,91 @@
 package sef.ATestTask.FirstActivity;
 
-
 import junit.framework.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
+public class EmployeeTest extends Test {
 
-public class EmployeeTest {
+    public void checkEmployeeCreatedProperly(){
+        Employee employee = new Employee();
+        employee.setFirstName("Test1");
+        assertEquals("I am an error message", "Test1", employee.getFirstName());
+    }
+
+    @BeforeEach
+    void setUp() {
+    }
+
+    @AfterEach
+    void tearDown() {
+    }
 
     @Test
-    public void checkEmployeeCreatedProperly() {
-        Employee employee = new Employee();
-        employee.setFirstName("Dima");
-        employee.setAge(37);
-        employee.setCompanyName("Opel");
-        employee.setJobTitle("Sales Manager");
+    void getFirstName() {
+    }
 
-        assertEquals("I am an error message", "Dima", employee.getFirstName());
-        assertThat(employee.getAge(), is(37));
-        assertThat(employee.getFirstName(), is("Dima"));
-        assertThat(employee.getCompanyName(), is("Opel"));
-        assertThat(employee.getJobTittle(), is("Sales Manager"));
+    @Test
+    void setFirstName() {
+    }
 
+    @Test
+    void getAge() {
+    }
+
+    @Test
+    void setAge() {
+    }
+
+    @Test
+    void getSecondName() {
+    }
+
+    @Test
+    void setSecondName() {
+    }
+
+    @Test
+    void announce() {
+    }
+
+    @Test
+    void getEmpId() {
+    }
+
+    @Test
+    void setEmpId() {
+    }
+
+    @Test
+    void getJobTitle() {
+    }
+
+    @Test
+    void setJobTitle() {
+    }
+
+    @Test
+    void getCompanyName() {
+    }
+
+    @Test
+    void setCompanyName() {
+    }
+
+    @Test
+    void getSalary() {
+    }
+
+    @Test
+    void setSalary() {
+    }
+
+    @Test
+    void testAnnounce() {
+    }
+
+    @Test
+    void compareTo() {
     }
 }

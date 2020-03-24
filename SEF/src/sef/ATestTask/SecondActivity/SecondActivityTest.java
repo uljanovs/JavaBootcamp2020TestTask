@@ -1,9 +1,14 @@
 package sef.ATestTask.SecondActivity;
 // Complete Code
 import junit.framework.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-public class SecondActivityTest extends TestCase {
+public class SecondActivityTest extends Test {
+
+
+	//TODO try to achieve 100% of test coverage
 
 	private SecondActivity theCalculator;
 
@@ -17,34 +22,19 @@ public class SecondActivityTest extends TestCase {
 		super.tearDown();
 	}
 
+	//Example ->
+	@Test
 	public void testGetSumPositiveValue() {
-	assertEquals(15.0, (theCalculator.sum(5, 10)));
-	assertEquals(15.0, (theCalculator.sum(10, 5)));
+		assertEquals(15, (theCalculator.getSum(5, 10)));
+		assertEquals(15, (theCalculator.getSum(10, 5)));
 	}
 
+	//Example ->
+	@Test
 	public void testGetSumNegativeValue() {
-	assertEquals(5.0, (theCalculator.sum(-5, 10)));
-	assertEquals(-5.0, (theCalculator.sum(5, -10)));
+		assertEquals(5, (theCalculator.getSum(-5, 10)));
+		assertEquals(-5, (theCalculator.getSum(5, -10)));
 	}
 
-	public void testGetDividePositiveValue(){
-	assertEquals(5.0, (theCalculator.divide(15, 3)));
-	assertEquals(6.0, (theCalculator.divide(-24, -4)));
-	}
-	public void testGetDivideNegativeValue(){
-		assertEquals(-3.0, theCalculator.divide(18, -6));
-	}
-	public void testGetSubstractionPositiveValue(){
-		assertEquals(10.0, theCalculator.substraction(23, 13));
-	}
-	public void testGetSubstractionNegativeVaue(){
-		assertEquals(-1.0, theCalculator.substraction(10, 11));
-	}
-	public void testGetMultiplyPositiveValue(){
-		assertEquals( 10.0, theCalculator.multiply(2,5));
-	}
-	public void testGetMultiplyNegativeValue(){
-		assertEquals(-21.0, theCalculator.multiply(-3, 7));
-	}
 }
 

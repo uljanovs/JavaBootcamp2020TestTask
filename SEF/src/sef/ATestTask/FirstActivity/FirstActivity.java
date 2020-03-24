@@ -1,63 +1,97 @@
 package sef.ATestTask.FirstActivity;
-
 import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.Collections;
 
-public class FirstActivity {
+public class FirstActivity extends Employee {
 
 	public static void main(String[] args) {
 
+		ArrayList<Employee> employees = new ArrayList<>();
+
+		employees.add(new Employee(1, "driver", "Romashka", 3000.0));
+		employees.add(new Employee(2, "manager", "Vasilek", 2000.0));
+		employees.add(new Employee(3, "director", "Oduvanchik", 1000.0));
+		employees.add(new Employee(4, "developer", "Carrot", 6000.0));
+		employees.add(new Employee(5, "tester", "Cucumber", 4000.0));
+		employees.add(new Employee(6, "teacher", "Potato", 5000.0));
+
+		System.out.println("This is Employee list: ");
+
+		for (int i = 0; i < employees.size(); i++) {
+			Employee r = employees.get(i);
+			System.out.println("ID " + r.getEmpId() + " Job Title: " + r.getJobTitle() + " Company:  " + r.getCompanyName() + " Salary: " + r.getSalary());
+
+		}
 		//TODO 1 Create collection of employee (more than 5) list or map
 		//		System.out.println() result
-		List<Employee> list = new ArrayList<>();
-		list.add(new Employee(1, "Manager","Tesla", 1000));
-		list.add(new Employee(2, "HR", "Tesla", 780));
-		list.add(new Employee(3, "Clark", "Tesla", 600));
-		list.add(new Employee(4,"Supervisor", "Tesla",900));
-		list.add(new Employee(5,"Firstader","Tesla",800));
 
+		System.out.println("-------Sorting by salary:-------- ");
 
-//		arr[j-1];
-//		list.get(j-1);
+		Collections.sort(employees);
+		for (int i = 0; i < employees.size(); i++) {
+			Employee q = employees.get(i);
+
+			System.out.println("ID " + q.getEmpId() + " Salary " + q.getSalary());
+		}
+
 		//TODO 2 sort and this employees by salary (from min to max)
-		for(int i = 0; i < list.size(); i++) {
-			for(int j = 1; j < list.size()-i; j++){
-				if(list.get(j-1).getSalary() > list.get(j).getSalary()) {
-					Employee tmp = list.get(j);
-					list.set(j, list.get(j -1));
-					list.set(j -1, tmp);
-				}
-			}
-		}
-
-		for (Employee employee : list) {
-			System.out.println("Name: " + employee.getFirstName() + " Salary: " + employee.getSalary());
-		}
 		// TIP - google bubble sort
 		//		System.out.println() result
 
-		Person person = new Student("Bootcamp");
-		person.setFirstName("Gosha");
-		person.setSecondName("Kucenko");
-		person.setAge(75);
 
-		System.out.println(person.announce());
+		Student s = new Student();
+		try {
+			s.setFirstName("Ivan ");
+			s.setSecondName("Ivanov ");
+		}catch (Exception e) {System.out.println(e);}
+		s.setAge(25);
+		System.out.println("-------TODO 3:------");
+		System.out.println(s.announce());
+
+		s.setSchoolName("Oxford");
+		System.out.println(s.announce(""));
+
+		Student y = new Student();
+		try {
+			y.setFirstName("Ivan3 ");
+		}catch (Exception e) {System.out.println(e);}
+		try {
+			y.setSecondName("Ivanov ");
+		}catch (Exception e) {System.out.println(e);}
+		y.setAge(40);
+		System.out.println(y.announce());
+
 		//TODO 3 create instance of a Student as a Person ->
 		// than ask him introduce()
 		// than make them Student
 		// than ask him introduce()
 
+
+		//Employee ch = new Employee(1,  "jobTitle ", "companyName ", 100);
+		//System.out.println(ch.announce());
+
+		//setEmployeeChanges(ch, 2,  "jobTitle2 ", "companyName2 ", 2500, "Ivan ", "Ivanov ", 30);
+		//System.out.println(ch.announce());
+	}
+
+	public static void setEmployeeChanges(Employee ch, int id, String job , String company, double salary, String name, String family, int age) {
+
+		ch.setEmpId(id);
+		ch.setJobTitle(job);
+		ch.setCompanyName(company);
+		ch.setSalary(salary);
+		try{
+		ch.setFirstName(name);
+		ch.setSecondName(family);
+		}catch (Exception e) {System.out.println(e);}
+		ch.setAge(age);
+
+
 		//TODO 4 Create method for full change of employee information
 		// for example some employee change his work
 
-
 	}
-
-	//4
-	public void changeEmployeeInformation(Employee employee, int empId,String jobTitle, String companyName, double salary) {
-
-	}
-	
-	
 }
+	
+	
+

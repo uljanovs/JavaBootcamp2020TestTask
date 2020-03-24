@@ -1,32 +1,57 @@
 package sef.ATestTask.SecondActivity;
+import java.lang.Math;
+
 // Complete Code
 public class SecondActivity {
+
+	public double sum(double a, double b) {
+		return a + b;
+	}
+
+	public double divide(double a, double b) {
+		double result;
+		try{
+			result = a/b;
+		} catch(ArithmeticException e) {
+			throw new ArithmeticException("/ by zero");
+		}
+		return a/b;
+	}
+
+	public double subtract(double a, double b) {
+		return a - b;
+	}
+
+	public double multiply(double a, double b) {
+		return a * b;
+	}
+
+	public double square(double a) {
+		return a * a;
+	}
+
+	public double root(double a) {
+		return Math.sqrt(a);
+	}
 
 	public static void main(String[] args) {
 		SecondActivity calculator = new SecondActivity();
 
-		double result = calculator.sum(10.2, 5);
-		System.out.println(result);
-		result = calculator.substraction(756.2, 65.3);
-		System.out.println(result);
-		double divide = calculator.divide(100, 33);
-		System.out.println(divide);
-		double multiply = calculator.multiply(2, 3);
-		System.out.println(multiply);
+		System.out.println(calculator.sum(10.2, 5));
+		System.out.println(calculator.divide(100, 0));
+		System.out.println(calculator.subtract(20, 8));
+		System.out.println(calculator.multiply(20, 8));
+		System.out.println(calculator.square(20));
+		System.out.println(calculator.root(20));
+
+		//TODO Use the calculator to calculate different values
+		//Example ->
+		//calculator.sum(10.2, 5);
+		//calculator.divide(100, 33);
+		// and more
+
 	}
 
-	public double sum(double v, double i) {
-		return v + i;
-	}
-	public double divide(double v, double i){
-		return v / i;
-	}
-	public double multiply(double v, double i){
-		return v * i;
-	}
-	public double substraction(double v, double i){
-		return v - i;
-	}
 	//TODO create the Calculator (here or in additional class)
 
 }
