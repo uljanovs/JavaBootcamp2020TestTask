@@ -1,92 +1,95 @@
 package sef.ATestTask.FirstActivity;
 
-import java.io.IOException;
-
 public class Employee extends Person {
 
-    public int empId;
-    public String jobTitle;
-    public String companyName;
-    public double salary;
+    private int empId;
+    private String jobTitle;
+    private String companyName;
+    private double salary;
+    private String name;
+    private int age;
 
     //TODO 1 create different constructors
     //Behavior - default constructor
-    public Employee() {
-        this.empId = 0;
-        this.jobTitle = "Unknown";
+    public Employee(String name, int age, String jobTitle, int salary) {
+        this.name = "Unknown";
+        this.age = 0;
         this.companyName = "Unknown";
+        this.jobTitle = "Unknown";
         this.salary = 0;
+        this.empId = 0;
+    }
+    //Behavior - parameterized constructors
+    public Employee(String name, int age, String title, String company, double salary, int Id) {
+        this.name = name;
+        this.age = age;
+        this.companyName = company;
+        this.jobTitle = title;
+        this.salary = salary;
+        this.empId = Id;
     }
 
-    //Behavior - parameterized constructor
-    public Employee(String firstName, String secondName,int age, int empId, String jobTitle, String companyName, double salary) {
-        super(firstName,secondName,age);
-
-        this.empId = empId;
-        this.jobTitle = jobTitle;
-        this.companyName = companyName;
-        this.salary = salary;
+    public Employee(String name) {
+        this.name = name;
     }
 
     //TODO 2 add getters and setters
+// getter for String name
+    public String getName() {
+        return name;
+    }
+
+    // setter for String name
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    // getter for String company
+    public String getCompany() {
+        return companyName;
+    }
+
+    // setter for String company
+    public void setCompany(String company) {
+        this.companyName = company;
+    }
+
+    // getter for String jobTitle
     public String getJobTitle() {
         return jobTitle;
     }
 
+    // setter for String jobTitle
     public void setJobTitle(String jobTitle) {
         this.jobTitle = jobTitle;
     }
 
-    public int getEmpId() {
-        return empId;
-    }
-
-    public void setEmpId(int empId) {
-        this.empId = empId;
-    }
-
-    public String getCompanyName() {
-        return companyName;
-    }
-
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
-    }
-
+    // getter for double salary
     public double getSalary() {
         return salary;
     }
 
-    public void setSalary(int salary) {
+    // setter for double salary
+    public void setSalary(double salary) {
         this.salary = salary;
     }
 
+    // getter for int empId
+    public int getEmpId() {
+        return empId;
+    }
+
+    // setter for int empId
+    public void setEmpId(int empId) {
+        this.empId = empId;
+    }
+
     //TODO 3 override method announce()
-    public void announce() {
-        Person p = new Person();
-        try {
-            p.setFirstName("Sandis");
-        } catch (CustomExceptionActivityy customExceptionActivityy) {
-            customExceptionActivityy.printStackTrace();
-        }
-        try {
-            p.setSecondName("Arbidans");
-        } catch (CustomExceptionActivityy customExceptionActivityy) {
-            customExceptionActivityy.printStackTrace();
-        }
-        p.setAge(28);
-        System.out.println("My name is " + p.getFirstName() + " " + p.getSecondName() + " and i am " + p.getAge() + " I work as " + getJobTitle() + " in company " + getCompanyName());
-
-    }
-
-    public static void main(String[] args) throws IOException {
-        Employee ez = new Employee();
-        ez.setCompanyName("fictionalcompany");
-        ez.setEmpId(0);
-        ez.setJobTitle("fictionalposition");
-        ez.setSalary(999999);
-        ez.announce();
-    }
-
+    {
+        System.out.println("My name is" + name + "and i am" + age + "years old." + " I work as" + jobTitle + "in" + companyName);
 
 }
+}
+
+
+

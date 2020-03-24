@@ -1,55 +1,118 @@
 package sef.ATestTask.SecondActivity;
 
+import junit.framework.TestCase;
+
 // Complete Code
 public class SecondActivity {
 
-    public static void main(String[] args) {
-        SecondActivity calculator = new SecondActivity();
-        calculator.sum(10.2, 5);
-        calculator.subtract(100.6, 8.7);
-        calculator.divide(4, 5.7);
-        calculator.multiply(2, 5);
+	public static void main(String[] args) {
+		SecondActivity calculator = new SecondActivity();
+
+		//TODO Use the calculator to calculate different values
+		//Example ->
+		//calculator.sum(10.2, 5);
+		//calculator.divide(100, 33);
+		// and more
+
+		int x = 10;
+		int y = 5;
+		int[] nums = {1, 2, 3, 4};
+
+		System.out.println("Addition - " + add(x, y));
+		System.out.println("Subtraction - " + subtract(x, y));
+		System.out.println("Multiply - " + multiply(nums));
+		System.out.println("Divide - " + divide(x, y));
+	}
+
+	private static int add(int x, int y) {
+		int sum = x + y;
+		return sum;
+	}
+
+	private static int subtract(int x, int y) {
+		int diff = 0;
+		if (x > y) {
+			diff = x - y;
+		} else {
+			diff = y - x;
+		}
+		return diff;
+	}
+
+	private static int multiply(int[] numbers) {
+		int temp = 1;
+
+		for (int i = 0; i < numbers.length; i++) {
+			temp = temp * numbers[i];
+		}
+		return temp;
+	}
+
+	private static int divide(int x, int y) {
+		int divValue = 0;
+		if (x == 0 || y == 0) {
+			System.out.println("Oops! one of my numbers is 0, i can't do the division");
+			divValue = 0;
+		} else {
+			divValue = x / y;
+		}
+		return divValue;
+	}
+}
+		//TODO create the Calculator (here or in additional class)
+
+class MyCalculator {
+
+	public static void main(String[] args) {
+
+		int x = 10;
+		int y = 5;
+
+		int[] nums = {1, 2, 3, 4};
+
+		System.out.println("Addition - " + add(x,y));
+		System.out.println("Subtraction - " + subtract(x,y));
+		System.out.println("Multiply - " + multiply(nums));
+		System.out.println("Divide - " + divide(x,y));
+
+	}
 
 
-        //TODO Use the calculator to calculate different values
-        //Example ->
-        //calculator.sum(10.2, 5);
-        //calculator.divide(100, 33);
-        // and more
+	private static int add(int x, int y) {
+		int sum = x + y;
+		return sum;
+	}
 
-    }
+	private static int subtract(int x, int y) {
+		int diff = 0;
+		if (x > y) {
+			// complete the code
+		} else {
+			// complete the code
+		}
 
-    //TODO create the Calculator (here or in additional class)
-    public double sum(double x, double y) {
-        double sum = x + y;
-        return sum;
-    }
+		return diff;
+	}
 
-    public double subtract(double x, double y) {
-        double diff = 0;
-        if (x > y) {
-            diff = x - y;
-        } else {
-            diff = y - x;
-        }
+	private static int multiply(int[] numbers) {
+		int temp = 1;
 
-        return diff;
-    }
+		for (int i = 0; i < numbers.length; i++) {
+			temp = temp * numbers[i];
+		}
+		return temp;
 
-    public double multiply(double x, double y) {
-        double temp = x * y;
-        return temp;
-    }
+	}
 
-    public double divide(double x, double y) {
-        double divValue = 0;
-        if (x == 0 || y == 0) {
-            divValue = 0;
-        } else {
-            divValue = x / y;
-        }
-        return divValue;
+	private static int divide(int x, int y) {
+		int divValue = 0;
+		if (x == 0 || y == 0) {
+			// complete the code
+		} else {
+			// complete the code
+		}
+		return divValue;
 
-    }
+	}
 
 }

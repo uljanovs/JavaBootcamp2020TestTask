@@ -3,41 +3,28 @@ package sef.ATestTask.FirstActivity;
 
 //TODO Implement class Student with parent Person
 
-public class Student extends Person{
-    public String schoolName;
+public class Student extends Person {
+    private String schoolName;
 
-    public Student(){
-        this.schoolName="unknown";
+    public Student() {
+        this.schoolName = "Unknown";
     }
-    public Student(String schoolName){
-        this.schoolName=schoolName;
+
+    public Student(String school) {
+        this.schoolName = school;
     }
-    public String getSchoolName() {
+
+    // getter for String school
+    public String getSchool() {
         return schoolName;
     }
 
-    public void setSchoolName(String schoolName) {
-        this.schoolName = schoolName;
+    // setter for String name
+    public void setSchoolName(String school) {
+        this.schoolName = school;
     }
 
-    public void introduce() {
-
-        System.out.println("My name is " + getFirstName() + " " + getSecondName() + " and i am " + getAge() + " I study in university " +schoolName);
-    }
-    public static void main(String[] args){
-        Student s=new Student();Person p = new Person();
-        try {
-            p.setFirstName("Sandis");
-        } catch (CustomExceptionActivityy customExceptionActivityy) {
-            customExceptionActivityy.printStackTrace();
-        }
-        try {
-            p.setSecondName("Arbidans");
-        } catch (CustomExceptionActivityy customExceptionActivityy) {
-            customExceptionActivityy.printStackTrace();
-        }
-        p.setAge(28);
-        s.schoolName="fictional school name";
-        s.introduce();
+    public void announce(String s) {
+        System.out.println("I am study in university" + schoolName);
     }
 }

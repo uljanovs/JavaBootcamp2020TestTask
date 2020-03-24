@@ -8,58 +8,55 @@ public class ThirdActivity {
     public static void main(String[] args) {
         ThirdActivity ta = new ThirdActivity();
         //TODO handle exception on proper way
-        try {
-            ta.validateUser("Ivan");
-        } catch (CustomExceptionActivity c) {
-            System.out.println(c.getMessage());
-        }
+        ta.validateUser("Ivan");
         ta.catchExeption();
-        ta.catchMe(10,0);
-
     }
 
     void catchExeption() {
         int[] arr = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-        try {
-            for (int i = 0; i <= 10; i++) {
-                System.out.println(arr[i]);
-            }
-        }
-        catch (IndexOutOfBoundsException s){System.out.println(s.toString());}
-finally {
-            System.out.println("This should get printed even if there is an exception");
-        }
 
+        for (int i = 0; i <= 10; i++) {
+            System.out.println(arr[i]);
+        }
+        System.out.println("This should get printed even if there is an exception");
 
     }
 
-    void validateUser(String name) throws CustomExceptionActivity {
+    void validateUser(String name) {
         String[] validUsers = {"John", "Mike", "Missi", "Peacy"};
         boolean flag = false;
-        for (int i=0;i<validUsers.length;i++){
-            if (validUsers[i].equals(name)){
-                flag=true;
-                break;
-            }
-        }
-        if (flag==false) {throw new CustomExceptionActivity();}
-
         //TODO if name in a list -> set flag=true
         // if at the end flag=0 -> throw the exeption
-    }
+
+                boolean "John", "Mike", "Missi", "Peacy" = true;
+                boolean int(0) = false;
+                System.out.println("John", "Mike", "Missi", "Peacy");
+                System.out.println(0);
+            }
+        }
 
     void catchMe(int num1, int num2)
     {
         //TODO Catch exeption
-            try{int result=num1/num2;
-            System.out.println("The result is :" + result);}
-            catch (ArithmeticException z)
-            {System.out.println(z.toString());}finally {
+            int result=num1/num2;
+            System.out.println("The result is :" + result);
 
+            try{
+            System.out.println(num1/num2);
+            }
+            catch(Exception e)
+            {
+            System.out.println("The result is :" + result);
+            }
 
-                //TODO prints a message "Thank you for using this program." always
-                System.out.println("Thank you for using this program.");
+            //TODO prints a message "Thank you for using this program." always
+            System.out.println("Thank you for using this program.");
+            try {
+            int[] myNumbers = {1, 2, 3};
+            System.out.println(myNumbers[10]);
+            }
+            catch (Exception e) {
+            System.out.println("Thank you for using this program.");
             }
     }
-}
 

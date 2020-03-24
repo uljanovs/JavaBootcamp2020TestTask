@@ -1,27 +1,18 @@
 package sef.ATestTask.FirstActivity;
 
+import junit.framework.TestCase;
 
-import static org.junit.Assert.assertEquals;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
-public class StudentTest {
+public class StudentTest extends TestCase {
 
-    public void checkStudentCreatedProperly() {
-        Student s = new Student();
-        try {
-            s.setFirstName("Test1");
-        } catch (CustomExceptionActivityy customExceptionActivityy) {
-            customExceptionActivityy.printStackTrace();
+
+    public void testEmptyConstructor() {
+        Student student = new Student();
+        student.setSchoolName("of Chester");
+
+        assertEquals("I study in University", "of Chester", student.getSchool());
+        assertThat(student.getSchool(), is ("of Chester"));
         }
-        assertEquals("I am an error message", "Test1", s.getFirstName());
-        try {
-            s.setSecondName("Test1");
-        } catch (CustomExceptionActivityy customExceptionActivityy) {
-            customExceptionActivityy.printStackTrace();
-        }
-        assertEquals("I am an error message", "Test1", s.getSecondName());
-        s.setAge(111);
-        assertEquals("I am an error message",111,s.getAge());
-        s.setSchoolName("Test1");
-        assertEquals("I am an error message", "Test1", s.getSchoolName());
-    }
 }

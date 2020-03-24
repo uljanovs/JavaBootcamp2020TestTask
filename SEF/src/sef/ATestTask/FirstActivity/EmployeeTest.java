@@ -1,31 +1,27 @@
 package sef.ATestTask.FirstActivity;
 
 import junit.framework.TestCase;
+import org.hamcrest.Matcher;
+
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 public class EmployeeTest extends TestCase {
 
-    public void checkEmployeeCreatedProperly(){
+    public void checkEmployeeCreatedProperly() {
         Employee employee = new Employee();
-        try {
-            employee.setFirstName("Test1");
-        } catch (CustomExceptionActivityy customExceptionActivityy) {
-            customExceptionActivityy.printStackTrace();
-        }
-        assertEquals("I am an error message", "Test1", employee.getFirstName());
-        employee.setEmpId(22);
-        assertEquals("I am an error message", 22, employee.getEmpId());
-        employee.setSalary(444);
-        assertEquals("I am an error message", 444, employee.getSalary());
-        employee.setJobTitle("Test1");
-        assertEquals("I am an error message", "Test1", employee.getJobTitle());
-        employee.setCompanyName("Test1");
-        assertEquals("I am an error message", "Test1", employee.getCompanyName());
-        try {
-            employee.setSecondName("Test1");
-        } catch (CustomExceptionActivityy customExceptionActivityy) {
-            customExceptionActivityy.printStackTrace();
-        }
-        assertEquals("I am an error message", "Test1", employee.getSecondName());
-    }
+        employee.setName("Dima");
+        employee.setAge(37);
+        employee.setCompany("Opel");
+        employee.setJobTitle("Sales Manager");
+        employee.setSalary(1500);
 
+        assertEquals("I am an error message", "Dima", employee.getFirstName());
+        assertThat(employee.getAge(), is(37));
+        assertThat(employee.getName(), is("Dima"));
+        assertThat(employee.getCompany(), is("Opel"));
+        assertThat(employee.getJobTitle(), is("Sales Manager"));
+        assertThat(employee.getSalary(), is(1500));
+
+    }
 }

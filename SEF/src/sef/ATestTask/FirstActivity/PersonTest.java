@@ -2,22 +2,24 @@ package sef.ATestTask.FirstActivity;
 
 import junit.framework.TestCase;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
+
 public class PersonTest extends TestCase {
-    public void checkPersonCreatedProperly() {
-        Person a = new Person();
-        try {
-            a.setFirstName("Test1");
-        } catch (CustomExceptionActivityy customExceptionActivityy) {
-            customExceptionActivityy.printStackTrace();
-        }
-        assertEquals("I am an error message", "Test1", a.getFirstName());
-        try {
-            a.setSecondName("Test1");
-        } catch (CustomExceptionActivityy customExceptionActivityy) {
-            customExceptionActivityy.printStackTrace();
-        }
-        assertEquals("I am an error message", "Test1", a.getSecondName());
-        a.setAge(22);
-        assertEquals("I am an error message", 22, a.getAge());
+
+    public void testEmptyConstructor() {
+        Person person = new Person();
+        person.setFirstName("Oprah");
+        person.setSecondName("Winfrey");
+        person.setAge(66);
+
+
+        assertEquals("I am an error message", "Oprah", person.getFirstName());
+
+        assertThat(person.getAge(), is(66));
+
+        assertThat(person.getFirstName(), is("Oprah"));
+
+        assertThat(person.getSecondName(), is("Winfrey"));
     }
 }
