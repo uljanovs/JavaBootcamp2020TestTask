@@ -1,20 +1,21 @@
 package sef.ATestTask.FirstActivity;
 
-import junit.framework.TestCase;
 import org.junit.Test;
 
-public class StudentTest extends TestCase {
-    protected void setUp() throws Exception {
-        super.setUp();
-    }
+import static org.junit.Assert.assertEquals;
 
-    protected void tearDown() throws Exception {
-        super.tearDown();
-    }
+public class StudentTest {
 
-    public void testCheckStudentCreatedProperly()  {
+
+    @Test
+    public void testCheckStudent(){
         Student student = new Student();
-        student.setSchoolName("Test");
-        assertEquals("I am an error message", "Test", student.getSchoolName());
+        student.setFirstName("First");
+        student.setSecondName("Second");
+        student.setSchoolName("School");
+        assertEquals("I am an error message", "First", student.getFirstName());
+        assertEquals("I am an error message", "Second", student.getSecondName());
+        assertEquals("I am an error message", "School", student.getSchoolName());
     }
+
 }

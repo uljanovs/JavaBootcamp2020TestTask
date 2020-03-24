@@ -3,34 +3,32 @@ package sef.ATestTask.FirstActivity;
 
 //TODO Implement class Student with parent Person
 
-public class Student extends Person {
+import javax.xml.ws.handler.Handler;
+
+public class Student extends Person implements Humanity {
+
+    private String nationality;
     private String schoolName;
 
-    //Default constructor
-    public Student() {
-
-        this.schoolName = "RTU";
-    }
-
-    //Parametrized constructor
-    public Student (String firstName, String secondName, int age, String schoolName){
-        super(firstName, secondName, age);
-        this.schoolName = schoolName;
-    }
-
-    //getter for schoolName
-    public String getSchoolName (){
+    public String getSchoolName() {
         return schoolName;
     }
 
-    //setter for schoolName
-    public void setSchoolName(String schoolName){
+    public void setSchoolName(String schoolName) {
         this.schoolName = schoolName;
     }
 
-    //Method introduce
-    public void announce(){
-        System.out.println("I am study in university " + getSchoolName());
+    public String announce() {
+        String personAnnounce = super.announce();
+        return personAnnounce + "I study at" + schoolName;
     }
 
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
+    }
+
+    @Override
+    public String getNationality() {
+        return this.nationality;
+    }
 }
