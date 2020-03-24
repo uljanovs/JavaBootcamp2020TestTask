@@ -1,12 +1,20 @@
 package sef.ATestTask.FirstActivity;
 
-import junit.framework.TestCase;
+import org.junit.Test;
 
-    public class StudentTest extends TestCase {
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
 
-        public void checkStudentCreatedProperly() {
-            Student student = new Student();
-            student.setFirstName("Test1");
-            assertEquals("I am an error message", "Test1", student.getFirstName());
-        }
+public class StudentTest {
+    @Test
+    public void TestAnnounce(){
+        Student student = new Student();
+        student.setSchoolName("Bootcamp");
+        student.setFirstName("Dmitrij");
+        student.setSecondName("Solo");
+        student.setAge(28);
+        student.announce();
+
+        assertThat(student.announce(),is("My name is Dmitrij Solo and I am 28. I am study in university Bootcamp"));
     }
+}
