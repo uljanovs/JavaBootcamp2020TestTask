@@ -1,34 +1,29 @@
 package sef.ATestTask.SecondActivity;
 
-
 // Complete Code
 public class SecondActivity {
 
-	public static void main(String[] args) {
-		SecondActivity calculator = new SecondActivity();
-
-
+	public void main(String[] args) {
+		theCalc calculator = new theCalc(theCalc.CALC_TYPE_BASIC);
 		//TODO Use the calculator to calculate different values
 		//Example ->
-		Double sum = calculator.sum(10.2, 5);
-		Double divide= calculator.divide(100, 33);
+		//calculator.sum(10.2, 5);
+		//calculator.divide(100, 33);
 		// and more
-
-
-		//TODO create the Calculator (here or in additional class)
-
+		double result = calculator.add(10.2, 5);
+		System.out.println("1) Add result is " + result);
+		result = calculator.subtract(100, 33);
+		System.out.println("2) Subtract result is " + result);
+		// Multiply
+		result = calculator.multiply(5.6, 3);
+		System.out.println("3) Multiplication result is " + result);
+		result = calculator.divide(3, 4);
+		System.out.println("4) Divide result is " + result);
 
 	}
 
-	public double divide(int i, int i1) {
-		if(i1==0){
-			return 0;
-		}
-		return 1/i1;
-	}
+	//TODO create the Calculator (here or in additional class)
+	// Add
 
-	public double sum(double v, int i) {
-		return v+i;
-	}
-}
 
+	}

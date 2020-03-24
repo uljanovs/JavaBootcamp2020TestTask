@@ -5,14 +5,15 @@ import org.junit.Test;
 
 public class SecondActivityTest extends TestCase {
 
+
 	//TODO try to achieve 100% of test coverage
 
-	private SecondActivity theCalculator;
+	private theCalc calc;
 
 	protected void setUp() throws Exception {
 		super.setUp();
 		//	Initialize variables to be used here
-		theCalculator = new SecondActivity();
+		calc = new theCalc();
 	}
 
 	protected void tearDown() throws Exception {
@@ -21,27 +22,52 @@ public class SecondActivityTest extends TestCase {
 
 	//Example ->
 	@Test
-	public void testGetSumPositiveValue() {
-		assertEquals(15, (int) theCalculator.sum(5, 10));
-		assertEquals(15, (int) theCalculator.sum(10, 5));
+	public void testAddPositiveValue() {
+		assertEquals(15.0, (theCalc.add(5, 10)));
+		assertEquals(15.0, (theCalc.add(10, 5)));
 	}
 
 	//Example ->
 	@Test
-	public void testGetSumNegativeValue() {
-		assertEquals(5, (int) theCalculator.sum(-5, 10));
-		assertEquals(-5, (int) theCalculator.sum(5, -10));
+	public void testAddNegativeValue() {
+		assertEquals(5.0, (theCalc.add(-5, 10)));
+		assertEquals(-5.0, (theCalc.add(5, -10)));
 	}
 
 	@Test
-	public void testGDiv() {
-		assertEquals(0, (int) theCalculator.divide(0, 10));
+	public void testSubtractPositiveValue() {
+		assertEquals(-5.0, (theCalc.subtract(5, 10)));
+		assertEquals(5.0, (theCalc.subtract(10, 5)));
 	}
 
 	@Test
-	public void testGDivToZero() {
-		assertEquals(0, (int) theCalculator.divide(0, 0));
+	public void testSubtractNegativeValue() {
+		assertEquals(-15.0, (theCalc.subtract(-5, 10)));
+		assertEquals(15.0, (theCalc.subtract(5, -10)));
 	}
 
+	@Test
+	public void testMultiplyPositiveValue() {
+		assertEquals(50.0, (theCalc.multiply(5, 10)));
+		assertEquals(50.0, (theCalc.multiply(10, 5)));
+	}
+
+	@Test
+	public void testMultiplyNegativeValue() {
+		assertEquals(-50.0, (theCalc.multiply(-5, 10)));
+		assertEquals(-50.0, (theCalc.multiply(5,-10)));
+	}
+
+	@Test
+	public void testDividePositiveValue() {
+		assertEquals(0.5, (theCalc.divide(5, 10)));
+		assertEquals(2.0, (theCalc.divide(10, 5)));
+	}
+
+	@Test
+	public void testDivideNegativeValue() {
+		assertEquals(-2.0, (theCalc.divide(-10, 5)));
+		assertEquals(-2.0, (theCalc.divide(10, -5)));
+	}
 }
 

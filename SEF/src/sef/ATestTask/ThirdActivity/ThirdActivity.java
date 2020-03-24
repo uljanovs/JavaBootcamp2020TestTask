@@ -5,15 +5,10 @@ package sef.ATestTask.ThirdActivity;
 
 public class ThirdActivity {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) /*throws CustomException*/ {
         ThirdActivity ta = new ThirdActivity();
         //TODO handle exception on proper way
-        try {
-            ta.validateUser("Ivan");
-        }catch (Exception e){
-            System.out.println(e);
-        }
-
+        /*ta.validateUser("Ivan");*/
         ta.catchExeption();
     }
 
@@ -24,40 +19,39 @@ public class ThirdActivity {
             for (int i = 0; i <= 10; i++) {
                 System.out.println(arr[i]);
             }
-        } catch (IndexOutOfBoundsException e) {
-            System.out.println(e.toString());
-        } finally {
+        } catch (ArrayIndexOutOfBoundsException arrayex) {
             System.out.println("This should get printed even if there is an exception");
         }
-
-
     }
-    //TODO if name in a list -> set flag=true
-    // if at the end flag=0 -> throw the exeption
-    public void validateUser(String name) throws CustomExceptionActivity {
+
+    void validateUser(String name) {
         String[] validUsers = {"John", "Mike", "Missi", "Peacy"};
         boolean flag = false;
-        for (int i = 0; i < 4; i++) {
-            if (validUsers[i].equals(name)) {
-                flag = true;
-                break;
+        //TODO if name in a list -> set flag=true
+        // if at the end flag=0 -> throw the exception
+        try {
+            for (int i = 0; i < 4; i++) {
+                if (validUsers[i].equals(name)) {
+                    flag = true;
+                    break;
+                }
             }
-
+        } catch (Exception flagisfalse) {
+            System.out.println("Name is not on the list");
         }
-        if (flag == false) {
-            throw new CustomExceptionActivity();
-        }
-
-
     }
 
     void catchMe(int num1, int num2) {
         //TODO Catch exeption
-        int result = num1 / num2;
-        System.out.println("The result is :" + result);
-
-        //TODO prints a message "Thank you for using this program." always
-        System.out.println("Thank you for using this program.");
+        try {
+            int result = num1 / num2;
+            System.out.println("The result is :" + result);
+        } catch (ArithmeticException arithex) {
+            System.out.println("Cannot perform");
+        } finally {
+            //TODO prints a message "Thank you for using this program." always
+            System.out.println("Thank you for using this program.");
+        }
 
     }
 }
