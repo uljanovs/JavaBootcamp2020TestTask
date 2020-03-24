@@ -1,4 +1,12 @@
-package sef.ATestTask.FirstActivity;
+package SEF.src.sef.ATestTask.FirstActivity;
 
-public class StudentTest {
+import junit.framework.TestCase;
+
+public class StudentTest extends TestCase {
+
+    public void testcheckStudentCreatedProperly(){
+        Student student = new Student();
+        student.setSchoolName("LU");
+        assertEquals("I am an error message", "LU", student.getSchoolName());
+    }
 }
