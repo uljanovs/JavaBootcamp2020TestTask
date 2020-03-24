@@ -1,71 +1,55 @@
 package sef.ATestTask.SecondActivity;
+
 // Complete Code
 public class SecondActivity {
 
-	public static void main(String[] args){
-
-		//TODO Use the calculator to calculate different values
-
-		//Example ->
-		//calculator.sum(10.2, 5);
-		//calculator.divide(100, 33);
-		// and more
-	    int x = 11;
-		int y = 2;
-		int sum;
-		int diff;
+    public static void main(String[] args) {
+        SecondActivity calculator = new SecondActivity();
+        calculator.sum(10.2, 5);
+        calculator.subtract(100.6, 8.7);
+        calculator.divide(4, 5.7);
+        calculator.multiply(2, 5);
 
 
-		private static int add(int x, int y) {
-			int sum = x + y;
-			return sum;
-		}
+        //TODO Use the calculator to calculate different values
+        //Example ->
+        //calculator.sum(10.2, 5);
+        //calculator.divide(100, 33);
+        // and more
 
-		private static int subtract(int x, int y) {
-			int diff = 0;
-			if (x > y) {
-				diff = x - y;
-			} else {
-				diff = y - x;
-			}
-			return diff;
-		}
+    }
 
-		int x = 100;
-		int y = 33;
+    //TODO create the Calculator (here or in additional class)
+    public double sum(double x, double y) {
+        double sum = x + y;
+        return sum;
+    }
 
-	    private static int divide(int x, int y) {
-		int divValue = 0;
-		if (y == 0) {
-			System.out.println("division by null is not allowed");
-			divValue = 0;
-		} else {
-			divValue = x / y;
-		}
-		return divValue;
+    public double subtract(double x, double y) {
+        double diff = 0;
+        if (x > y) {
+            diff = x - y;
+        } else {
+            diff = y - x;
+        }
 
+        return diff;
+    }
 
-		private static int multiply(int[] numbers) {
-			int temp = 1;
-			for (int i = 0; i < numbers.length; i++) {
-				temp = temp * numbers[i];
-			}
-			return temp;
-		}
+    public double multiply(double x, double y) {
+        double temp = x * y;
+        return temp;
+    }
 
+    public double divide(double x, double y) {
+        double divValue = 0;
+        if (x == 0 || y == 0) {
+            divValue = 0;
+        } else {
+            divValue = x / y;
+        }
+        return divValue;
 
-	}
+    }
 
-	//TODO create the Calculator (here or in additional class)
-	//Calculator
-			int x = 10;
-			int y = 5;
-			int[] nums = {1, 2, 3, 4};
-			System.out.println("Addition - " + add(x, y));
-			System.out.println("Subtraction - " + subtract(x, y));
-			System.out.println("Multiply - " + multiply(nums));
-			System.out.println("Divide - " + divide(x, y));
-		}
 }
-
-

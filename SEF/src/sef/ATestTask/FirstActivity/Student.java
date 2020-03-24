@@ -4,40 +4,40 @@ package sef.ATestTask.FirstActivity;
 //TODO Implement class Student with parent Person
 
 public class Student extends Person{
+    public String schoolName;
 
-    //Attributes
-    private int grade;
-    private String schoolName;
-    private String firstName;
-
-    //Behavior - default constructor
     public Student(){
-        System.out.println("This is studen'ts constructor");
+        this.schoolName="unknown";
     }
-
-    // getter for int grade
-    public int getGrade() {
-        return grade;
+    public Student(String schoolName){
+        this.schoolName=schoolName;
     }
-
-    // setter for int grade
-    public void setGrade(int grade) {
-        this.grade = grade;
-    }
-
-    // getter for String schoolName
     public String getSchoolName() {
         return schoolName;
     }
 
-    // setter for String schoolName
     public void setSchoolName(String schoolName) {
         this.schoolName = schoolName;
     }
 
-    public void announce(){
-        super.public.String announce();  // calls announce() method of Person class
-        System.out.println("I study at " + getSchoolName());
-    }
+    public void introduce() {
 
+        System.out.println("My name is " + getFirstName() + " " + getSecondName() + " and i am " + getAge() + " I study in university " +schoolName);
+    }
+    public static void main(String[] args){
+        Student s=new Student();Person p = new Person();
+        try {
+            p.setFirstName("Sandis");
+        } catch (CustomExceptionActivityy customExceptionActivityy) {
+            customExceptionActivityy.printStackTrace();
+        }
+        try {
+            p.setSecondName("Arbidans");
+        } catch (CustomExceptionActivityy customExceptionActivityy) {
+            customExceptionActivityy.printStackTrace();
+        }
+        p.setAge(28);
+        s.schoolName="fictional school name";
+        s.introduce();
+    }
 }

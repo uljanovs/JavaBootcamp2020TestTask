@@ -1,69 +1,92 @@
 package sef.ATestTask.FirstActivity;
 
+import java.io.IOException;
+
 public class Employee extends Person {
 
-    private int empId;
-    private String jobTitle;
-    private String companyName;
-    private double salary;
+    public int empId;
+    public String jobTitle;
+    public String companyName;
+    public double salary;
 
     //TODO 1 create different constructors
-    //default constructor
+    //Behavior - default constructor
     public Employee() {
-        System.out.println("Thia is default constructor");
+        this.empId = 0;
+        this.jobTitle = "Unknown";
+        this.companyName = "Unknown";
+        this.salary = 0;
     }
 
-    //parametrized constructor
-    public Employee(int empId, String jobTitle, String companyName, int salary ){
+    //Behavior - parameterized constructor
+    public Employee(String firstName, String secondName,int age, int empId, String jobTitle, String companyName, double salary) {
+        super(firstName,secondName,age);
+
         this.empId = empId;
         this.jobTitle = jobTitle;
         this.companyName = companyName;
         this.salary = salary;
     }
 
-
     //TODO 2 add getters and setters
-
-    // 4 getters
-    public String getJobTitle(){
+    public String getJobTitle() {
         return jobTitle;
     }
 
-    public int getEmpId(){
-        return empId();
-    }
-
-    public String getCompanyName(){
-        return companyName;
-    }
-
-    public double getSalary(){
-        return salary;
-    }
-
-   // 4 setters
-   public void setEmpId(int empId){
-        this.empId = empId;
-   }
-
-    public void setJobTitle(String jobTitle){
+    public void setJobTitle(String jobTitle) {
         this.jobTitle = jobTitle;
     }
 
-    public void setCompanyName(String companyName){
+    public int getEmpId() {
+        return empId;
+    }
+
+    public void setEmpId(int empId) {
+        this.empId = empId;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
         this.companyName = companyName;
     }
 
-    public void setSalary(double salary){
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(int salary) {
         this.salary = salary;
     }
 
     //TODO 3 override method announce()
+    public void announce() {
+        Person p = new Person();
+        try {
+            p.setFirstName("Sandis");
+        } catch (CustomExceptionActivityy customExceptionActivityy) {
+            customExceptionActivityy.printStackTrace();
+        }
+        try {
+            p.setSecondName("Arbidans");
+        } catch (CustomExceptionActivityy customExceptionActivityy) {
+            customExceptionActivityy.printStackTrace();
+        }
+        p.setAge(28);
+        System.out.println("My name is " + p.getFirstName() + " " + p.getSecondName() + " and i am " + p.getAge() + " I work as " + getJobTitle() + " in company " + getCompanyName());
 
-    public String announce(){
-        System.out.println( "I am working as " + getJobTitle() + " in " = getCompanyName() + ".");
     }
 
-}
+    public static void main(String[] args) throws IOException {
+        Employee ez = new Employee();
+        ez.setCompanyName("fictionalcompany");
+        ez.setEmpId(0);
+        ez.setJobTitle("fictionalposition");
+        ez.setSalary(999999);
+        ez.announce();
+    }
 
-      }
+
+}
