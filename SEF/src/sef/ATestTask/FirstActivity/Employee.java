@@ -1,6 +1,6 @@
 package sef.ATestTask.FirstActivity;
 
-public class Employee extends Person implements Comparable<Employee>{
+public class Employee extends Person {
 
     private int empId;
     private String jobTitle;
@@ -8,24 +8,22 @@ public class Employee extends Person implements Comparable<Employee>{
     private double salary;
 
     //TODO 1 create different constructors
-    public Employee(){
+    public Employee() {
         this.empId = 0;
-        this.jobTitle = "Unknown";
-        this.companyName = "Unknown";
-        this.salary = 0.0;
+        this.jobTitle = "unknown";
+        this.companyName = "unknown";
+        this.salary = 0;
+
     }
 
-    public Employee(int empId,  String jobTitle, String companyName, double salary) {
+    public Employee(int empId, String jobTitle, String companyName, double salary) {
         this.empId = empId;
         this.jobTitle = jobTitle;
         this.companyName = companyName;
         this.salary = salary;
-
-
     }
 
     //TODO 2 add getters and setters
-
     public int getEmpId() {
         return empId;
     }
@@ -33,6 +31,7 @@ public class Employee extends Person implements Comparable<Employee>{
     public void setEmpId(int empId) {
         this.empId = empId;
     }
+
 
     public String getJobTitle() {
         return jobTitle;
@@ -58,15 +57,10 @@ public class Employee extends Person implements Comparable<Employee>{
         this.salary = salary;
     }
 
-
     //TODO 3 override method announce()
     public String announce() {
-     return "My name is  " + getFirstName() + getSecondName() + " and I am " + getAge() + "years old. " + " I am work as " + getJobTitle() + getCompanyName() + "Salary: " + getSalary();
+        return "My name is " + getFirstName() + " " + getSecondName() + ", and i am " + getAge() + " years old. I am working as " + getJobTitle() + " in " + getCompanyName();
     }
 
 
-    @Override
-    public int compareTo(Employee o) {
-        return (Double.compare(this.getSalary(), o.getSalary()));
-    }
-    }
+}

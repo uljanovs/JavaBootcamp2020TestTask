@@ -4,27 +4,27 @@ package sef.ATestTask.FirstActivity;
 //TODO Implement class Student with parent Person
 
 public class Student extends Person {
-    private String schoolName;
+    public String schoolname;
 
-    public Student() {
-        this.schoolName = "Unknown";
+
+    public String getSchoolname() {
+        return schoolname;
     }
 
-    public Student(String schoolName) {
-        this.schoolName = schoolName;
+    public void setSchoolname(String schoolname) {
+        this.schoolname = schoolname;
+    }
+
+
+    public void student_introduce() {
+        System.out.println("I am study in university " + getSchoolname());
 
     }
 
-    public String getSchoolName() {
-        return schoolName;
-    }
-
-    public void setSchoolName(String schoolName) {
-        this.schoolName = schoolName;
-    }
-
-    public String announce(String st) {return "I am study in university  " + getSchoolName();
-    }
 
 }
+
+
+
+
 

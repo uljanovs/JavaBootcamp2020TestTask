@@ -3,62 +3,59 @@ package sef.ATestTask.FirstActivity;
 
 public class Person {
 
-//TODO 1 Implement Person Attributes
-private String firstName;
-private String secondName;
-private int age;
+    //TODO 1 Implement Person Attributes
+    String firstName;
+    String secondName;
+    int age;
 
-	//Behavior - default constructor
-	public Person() {
-		this.firstName = "Unknown";
-		this.secondName = "Unknown";
-		this.age = 0;
-	}
 
-	//Behavior - parameterized constructor
-	public Person(String firstName, String secondName, int age) {
-		this.firstName = firstName;
-		this.secondName = secondName;
-		this.age = age;
-	}
 
-	// getter for String firstName
-	public String getFirstName() {
-		return firstName;
-	}
+    //Behavior - default constructor
+    public Person() {
+        this.firstName = "Unknown";
+        this.secondName = "Unknown";
+        this.age = 0;
+    }
 
-	public void setFirstName(String firstName) throws Exception {
-		if (firstName.matches(".*\\d.*")) {
-			throw new Exception("Invalid firstName!");
-		}
-		this.firstName = firstName;
-	}
+    //Behavior - parameterized constructor
+    public Person(String firstName, String secondName, int age) {
+        this.firstName = firstName;
+        this.secondName = secondName;
+        this.age = age;
+    }
 
-	// getter for int age
-	public int getAge() {
-		return age;
-	}
+    // getter for String firstName
+    public String getFirstName() {
+        return firstName;
+    }
 
-	// setter for int age
-	public void setAge(int age) {
-		this.age = age;
-	}
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
-	public String getSecondName() {
-		return secondName;
-	}
+    // getter for int age
+    public int getAge() {
+        return age;
+    }
 
-	public void setSecondName(String secondName) throws Exception {
-		if (secondName.matches(".*\\d.*")) {
-			throw new Exception("Invalid secondName!");
-		}
-		this.secondName = secondName;
-	}
+    // setter for int age
+    public void setAge(int age) {
+        this.age = age;
+    }
 
-	//TODO 2 add all person info into announce() method
-	public String announce() {
-		return "My name is " + getFirstName() + getSecondName() + " and I am  " + getAge();
-	}
+    public String getSecondName() {
+        return secondName;
+    }
+
+    public void setSecondName(String secondName) {
+        this.secondName = secondName;
+    }
+
+    //TODO 2 add all person info into announce() method
+    public String announce() {
+        return "I am " + getFirstName() + " " + getSecondName();
+    }
 
 
 }
+
