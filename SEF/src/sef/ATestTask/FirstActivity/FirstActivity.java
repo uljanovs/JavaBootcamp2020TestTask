@@ -1,61 +1,58 @@
 package sef.ATestTask.FirstActivity;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Collections;
+import java.util.List;
 
 public class FirstActivity {
+    public static void main(String[] args) throws NewException {
 
-	public static void main(String[] args) {
-
-//TODO 1 Create collection of employee (more than 5) list or map
+        //TODO 1 Create collection of employee (more than 5) list or map
         //		System.out.println() result
+        List<Employee> employees = new ArrayList<>();
 
-        List<Employee> employees = new ArrayList<Employee>();
-        employees.add(new Employee("Joe", 27, "Assistant", 1000));
-        employees.add(new Employee("Chandler", 28, "Bookkeeper", 3000));
-        employees.add(new Employee("Ross", 28, "Manager", 4000));
-        employees.add(new Employee("Monica", 27, "HR", 2500));
-        employees.add(new Employee("Rachel", 27, "PR", 3500));
-        employees.add(new Employee("Phoebe", 29, "Intern", 500));
+        employees.add(new Employee("John", "Doe", 34, 1234, "developer", "Company", 2100));
+        employees.add(new Employee("Jane", "Doe", 27, 47289, "Assistant", "Company", 900));
+        employees.add(new Employee("Lizzy", "Brooks", 40, 9876, "manager", "Company", 1300));
+        employees.add(new Employee("Mike", "Johnson", 33, 6374, "QA engineer", "Company", 1500));
+        employees.add(new Employee("James", "Boone", 32, 5467, "HR", "Company", 1100));
+        employees.add(new Employee("Kate", "Hobbs", 28, 8566, "devOPS", "Company", 1600));
 
-        System.out.println(employees);
+		for (Employee employee : employees) {
+			System.out.println("First Name" + employee.getFirstName() + "Second Name" + employee.getSecondName() + "Age"
+					+ employee.getAge() + "ID" + employee.getEmpId() + "Job title" + employee.getJobTitle() + "Company"
+					+ employee.getCompanyName() + "Salary" + employee.getSalary());
+		}
+        //TODO 2 sort and this employees by salary (from min to max)
+        // TIP - google bubble sort
+        //		System.out.println() result
 
         Collections.sort(employees);
 
-        //TODO 2 sort and this employees by salary (from min to max)
-            for(int i = 0; i <employees.size(); i++) {
-                    for(int j = 1; j < employees.size()-i; j++){
-                            if(employees.get(j-1).getSalary() > employees.get(j).getSalary()); }
-                    {
-                        int j = 0;
-                        Employee tmp = employees.get(j);
-                        employees.set(j, employees.get(j -1));
-                        employees.set(j -1, tmp);
-                            }
-                    }
-            for (Employee employee : employees) {
-                    System.out.println("Name: " + employee.getFirstName() + " Salary: " + employee.getSalary());
-            }
-
-/*
-        TODO 3 create instance of a Student as a Person ->
-         than ask him introduce()
-         than make them Student
-         than ask him introduce()
-        */
-
-        Person person = new Student();
-            person.setFirstName("Mark");
-            person.setSecondName("Zuckerberg");
-            person.setAge(45);
-
-            System.out.println(person.announce("I am" + person.getFirstName());
-    }
-
-    //TODO 4 Create method for full change of employee information
-    // for example some employee change his work
-        public void change(Employee employee, int empId,String jobTitle, String companyName, double salary) {
-
+        for (Employee employee : employees) {
+            System.out.println("First Name" + employee.getFirstName() + "Second Name" + employee.getSecondName() + "Age"
+					+ employee.getAge() + "ID" + employee.getEmpId() + "Job title" + employee.getJobTitle() + "Company"
+					+ employee.getCompanyName() + "Salary" + employee.getSalary());
         }
+
+        //TODO 3 create instance of a Student as a Person ->
+        // than ask him introduce()
+        // than make them Student
+        // than ask him introduce()
+        Person student = new Person("Sam", "Dean", 24);
+        student.announce();
+        student = new Student("Sam", "Dean", 24, "RTU");
+        student.announce();
+
+
+
+        //TODO 4 Create method for full change of employee information
+        // for example some employee change his work
+
+        Employee employee = new Employee();
+        employee.ChangeInfo("John", "Doe", 34, 1234, "SEO", "Company", 2100);
+
+    }
 }
+
+

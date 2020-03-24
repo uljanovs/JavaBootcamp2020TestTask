@@ -6,25 +6,31 @@ package sef.ATestTask.FirstActivity;
 public class Student extends Person {
     private String schoolName;
 
+    //Default constructor
     public Student() {
-        this.schoolName = "Unknown";
+
+        this.schoolName = "RTU";
     }
 
-    public Student(String school) {
-        this.schoolName = school;
+    //Parametrized constructor
+    public Student (String firstName, String secondName, int age, String schoolName){
+        super(firstName, secondName, age);
+        this.schoolName = schoolName;
     }
 
-    // getter for String school
-    public String getSchool() {
+    //getter for schoolName
+    public String getSchoolName (){
         return schoolName;
     }
 
-    // setter for String name
-    public void setSchoolName(String school) {
-        this.schoolName = school;
+    //setter for schoolName
+    public void setSchoolName(String schoolName){
+        this.schoolName = schoolName;
     }
 
-    public void announce(String s) {
-        System.out.println("I am study in university" + schoolName);
+    //Method introduce
+    public void announce(){
+        System.out.println("I am study in university " + getSchoolName());
     }
+
 }

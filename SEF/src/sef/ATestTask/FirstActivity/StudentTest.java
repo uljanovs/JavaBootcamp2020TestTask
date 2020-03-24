@@ -1,18 +1,20 @@
 package sef.ATestTask.FirstActivity;
 
 import junit.framework.TestCase;
-
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertThat;
+import org.junit.Test;
 
 public class StudentTest extends TestCase {
+    protected void setUp() throws Exception {
+        super.setUp();
+    }
 
+    protected void tearDown() throws Exception {
+        super.tearDown();
+    }
 
-    public void testEmptyConstructor() {
+    public void testCheckStudentCreatedProperly()  {
         Student student = new Student();
-        student.setSchoolName("of Chester");
-
-        assertEquals("I study in University", "of Chester", student.getSchool());
-        assertThat(student.getSchool(), is ("of Chester"));
-        }
+        student.setSchoolName("Test");
+        assertEquals("I am an error message", "Test", student.getSchoolName());
+    }
 }

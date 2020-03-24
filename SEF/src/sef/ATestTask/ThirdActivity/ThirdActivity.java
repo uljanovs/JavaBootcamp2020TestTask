@@ -5,7 +5,7 @@ package sef.ATestTask.ThirdActivity;
 
 public class ThirdActivity {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CustomException {
         ThirdActivity ta = new ThirdActivity();
         //TODO handle exception on proper way
         ta.validateUser("Ivan");
@@ -15,48 +15,52 @@ public class ThirdActivity {
     void catchExeption() {
         int[] arr = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-        for (int i = 0; i <= 10; i++) {
-            System.out.println(arr[i]);
+        try {
+            for (int i = 0; i <= 10; i++) {
+                System.out.println(arr[i]);
+            }
+        } catch (IndexOutOfBoundsException exception) {
+            System.out.println("Ooops, the value is incorrect");
+        } finally {
+            System.out.println("This should get printed even if there is an exception");
         }
-        System.out.println("This should get printed even if there is an exception");
 
     }
 
-    void validateUser(String name) {
+    void validateUser(String name) throws CustomException {
         String[] validUsers = {"John", "Mike", "Missi", "Peacy"};
         boolean flag = false;
         //TODO if name in a list -> set flag=true
-        // if at the end flag=0 -> throw the exeption
+        // if at the end flag=0 -> throw the exception
+        //flag stores true if a match is found else it should remain false
 
-                boolean "John", "Mike", "Missi", "Peacy" = true;
-                boolean int(0) = false;
-                System.out.println("John", "Mike", "Missi", "Peacy");
-                System.out.println(0);
+        for (int i = 0; i < 4; i++) {
+            if (validUsers[i].equals(name)) {
+                flag = true;
+                break;
             }
         }
+        if (flag == false) {
+            throw new CustomException();
+        } else if (flag == true) {
+            System.out.println("Welcome to the program!");
+        }
 
-    void catchMe(int num1, int num2)
-    {
-        //TODO Catch exeption
-            int result=num1/num2;
-            System.out.println("The result is :" + result);
-
-            try{
-            System.out.println(num1/num2);
-            }
-            catch(Exception e)
-            {
-            System.out.println("The result is :" + result);
-            }
-
-            //TODO prints a message "Thank you for using this program." always
-            System.out.println("Thank you for using this program.");
-            try {
-            int[] myNumbers = {1, 2, 3};
-            System.out.println(myNumbers[10]);
-            }
-            catch (Exception e) {
-            System.out.println("Thank you for using this program.");
-            }
     }
+
+    void catchMe(int num1, int num2) {
+        //TODO Catch exception
+        try {
+            int result = num1 / num2;
+            System.out.println("The result is :" + result);
+        } catch (ArithmeticException exc) {
+            System.out.println("Division by zero is forbidden!");
+        }
+        //TODO prints a message "Thank you for using this program." always
+        finally {
+            System.out.println("Thank you for using this program.");
+        }
+
+    }
+}
 
